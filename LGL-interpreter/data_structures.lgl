@@ -1,0 +1,76 @@
+["seq",  
+
+    ["set", "A", ["array", 4]],    
+    ["print", ["get", "A"]],                     
+
+  
+    ["set_element", ["get", "A"], 0, 10],    
+    ["set_element", ["get", "A"], 1, 20],    
+    ["set_element", ["get", "A"], 2, 30],    
+    ["set_element", ["get", "A"], 3, 40],
+    ["print", ["get", "A"]],                     
+
+
+    ["print", ["get_element", ["get", "A"], 0]], 
+    ["print", ["get_element", ["get", "A"], 2]], 
+
+
+    ["print", ["array_size", ["get", "A"]]],     
+
+
+    ["set", "B", ["array", 2]],    
+    ["set_element", ["get", "B"], 0, 99],    
+    ["set_element", ["get", "B"], 1, 100],
+    ["print", ["get", "B"]],                     
+
+
+    ["set", "C", ["concatenate", ["get", "A"], ["get", "B"]]],    
+    ["print", ["get", "C"]],                     
+
+
+    ["print", ["array_size", ["get", "C"]]],     
+
+
+    ["set", "D", ["array", 0]],
+    ["set", "E", ["concatenate", ["get", "C"], ["get", "D"]]],
+    ["print", ["get", "E"]],                     
+
+
+
+    ["set", "K", ["setnew"]],
+    ["insert", ["get", "K"], 1],
+    ["insert", ["get", "K"], 2],
+    ["insert", ["get", "K"], 3],
+    ["insert", ["get", "K"], 4],
+    ["print", ["get", "K"]],                     
+
+    ["insert", ["get", "K"], 2],                 
+    ["print", ["get", "K"]],                     
+
+    ["set", "L", ["setnew"]],
+    ["insert", ["get", "L"], 3],
+    ["insert", ["get", "L"], 4],
+    ["insert", ["get", "L"], 20],
+    ["print", ["get", "L"]],                     
+
+
+    ["set", "M", ["merge", ["get", "K"], ["get", "L"]]],
+    ["print", ["get", "M"]],                     
+
+
+    ["print", ["set_size", ["get", "M"]]],       
+
+
+    ["print", ["exists", ["get", "M"], 3]],      
+    ["print", ["exists", ["get", "M"], 99]],     
+
+   
+    ["set", "N", ["setnew"]],
+    ["set", "O", ["merge", ["get", "M"], ["get", "N"]]],
+    ["print", ["get", "O"]],                     
+    
+ 
+    ["insert", ["get", "K"], 50],
+    ["insert", ["get", "K"], 50],                
+    ["print", ["get", "K"]]                     
+]

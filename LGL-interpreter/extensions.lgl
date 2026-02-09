@@ -1,0 +1,166 @@
+["seq",
+    ["set", "b", 3],
+    ["multiplizieren", 2, 3],
+    ["teilen", 15, 5],
+    ["kleiner", 15, 5],
+    ["kleiner", 5, 15],
+    ["groesser", 15, 5],
+    ["und", 0, 1],
+    ["und", 1, 1],
+
+    ["seq",
+        ["set", "a", 10],
+        ["set", "b", 3],
+        ["addieren", ["get","a"], 10]
+    ],
+
+    ["seq",
+        ["set", "x", 4],
+        ["set", "y", 2],
+        ["potenzieren", ["get","x"], ["get","y"]]
+    ],
+
+    ["seq",
+        ["set", "same",
+            ["func", ["num"],
+                ["get","num"]]],
+        ["call","same",3]
+    ],
+
+    ["seq",
+        ["set", "same", ["func", ["num"], ["get","num"]]],
+        ["call", "same", ["addieren",2,1]]
+    ],
+
+    ["potenzieren", 2, 3],  
+    ["potenzieren", 5, 0],   
+    ["potenzieren", 3, 4],   
+
+    ["kleiner_gleich", 5, 10],  
+    ["kleiner_gleich", 10, 5],  
+    ["kleiner_gleich", 7, 7],    
+
+    ["groesser_gleich", 10, 5],   
+    ["groesser_gleich", 5, 10],   
+    ["groesser_gleich", 7, 7], 
+
+    ["oder", 0, 0],   
+    ["oder", 0, 1],   
+    ["oder", 1, 0],   
+    ["oder", 1, 1],
+
+    ["seq",
+        ["set", "x", 4],
+        ["set", "y", 2],
+        ["potenzieren", ["get","x"], ["get","y"]]
+    ],
+
+    ["modulo", 10, 3],
+    ["not", 1],
+    ["not", 0],
+
+    ["seq",
+        ["set", "a", 10],
+        ["set", "b", 3],
+        ["print", ["addieren", ["get", "a"], 10]],
+        ["print", ["subtrahieren", ["get", "a"], ["get", "b"]]],
+        ["print", ["multiplizieren", 2, 3]],
+        ["print", ["teilen", 15, 5]],
+        ["print", ["potenzieren", 2, 3]],
+        ["print", ["modulo", 10, 3]]
+    ],
+
+    ["seq",
+        ["print", ["kleiner", 15, 5]],
+        ["print", ["kleiner", 5, 15]],
+        ["print", ["groesser", 15, 5]],
+        ["print", ["kleiner_gleich", 5, 10]],
+        ["print", ["kleiner_gleich", 7, 7]],
+        ["print", ["groesser_gleich", 10, 5]],
+        ["print", ["groesser_gleich", 7, 7]],
+        ["print", ["gleich", 4, 4]],
+        ["print", ["ungleich", 4, 5]]
+    ],
+
+    ["seq",
+        ["print", ["und", 0, 1]],
+        ["print", ["und", 1, 1]],
+        ["print", ["oder", 0, 0]],
+        ["print", ["oder", 0, 1]],
+        ["print", ["not", 1]],
+        ["print", ["not", 0]]
+    ],
+        ["seq",
+        ["set", "is_n_ungerade", 
+            ["func", ["n"],
+                ["seq",
+                    ["wiederhole_bis",
+                        ["seq",
+                            ["set", "n", ["subtrahieren", ["get", "n"], 2]]
+                        ],
+                        ["kleiner", ["get", "n"], 2]
+                    ],
+                    ["get", "n"]
+                ]
+            ]
+        ],
+        ["call", "is_n_ungerade", 5]
+    ],
+
+    ["seq",
+        ["set", "summe_bis", 
+            ["func", ["n"],
+                ["seq",
+                    ["set", "i", 0],
+                    ["set", "s", 0],
+                    ["wiederhole_bis", 
+                        ["seq",
+                            ["set", "i", ["addieren", ["get", "i"], 1]],
+                            ["set", "s", ["addieren", ["get", "i"], ["get", "s"]]]
+                        ],
+                        ["gleich", ["get", "i"], ["get", "n"]]
+                    ],
+                    ["get", "s"]
+                ]
+            ]
+        ],
+        ["call", "summe_bis", 4]
+    ],
+
+    ["seq",
+        ["set", "factorial",
+            ["func", ["n"],
+                ["seq",
+                    ["set", "i", 1],
+                    ["set", "result", 1],
+                    ["wiederhole_bis",
+                        ["seq",
+                            ["set", "result", ["multiplizieren", ["get", "result"], ["get", "i"]]],
+                            ["set", "i", ["addieren", ["get", "i"], 1]]
+                        ],
+                        ["groesser", ["get", "i"], ["get", "n"]]
+                    ],
+                    ["get", "result"]
+                ]
+            ]
+        ],
+        ["print", ["call", "factorial", 5]]
+    ],
+
+    ["seq",
+        ["set", "countdown",
+            ["func", ["n"],
+                ["seq",
+                    ["wiederhole_bis",
+                        ["seq",
+                            ["print", ["get", "n"]],
+                            ["set", "n", ["subtrahieren", ["get", "n"], 1]]
+                        ],
+                        ["kleiner", ["get", "n"], 1]
+                    ]
+                ]
+            ]
+        ],
+        ["call", "countdown", 5]
+    ]
+]

@@ -1,0 +1,21 @@
+["seq",
+
+    ["set", "get_cube_power", ["func", ["n"], 
+        ["seq",
+            ["multiplizieren", "n", ["multiplizieren", "n", "n"]]
+        ]
+    ]],
+    
+    ["set", "add_cubes", ["func", ["a", "b"],
+        ["seq",
+            ["addieren", 
+                ["call", "get_cube_power", "a"],
+                ["call", "get_cube_power", "b"]
+            ]
+        ]
+    ]],
+    
+    ["set", "res", ["call", "add_cubes", 10, 12]],
+    ["print", ["get", "res"]]
+    
+]

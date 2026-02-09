@@ -1,0 +1,32 @@
+
+["seq",
+    ["set", "sq_func", ["func", ["n"], ["multiplizieren", "n", "n"]]],
+    ["set", "add_func", ["func", ["x", "y"], ["addieren", "x", "y"]]],
+    ["set", "larger_ten_func", ["func", ["n"], ["groesser", "n", 10]]],
+    ["set", "times_ten_func", ["func", ["n"], ["multiplizieren", "n", 10]]],
+    ["set", "prod_func", ["func", ["x", "y"], ["multiplizieren", "x", "y"]]],
+    ["set", "greater_two_func", ["func", ["n"], ["groesser", "n", 2]]],
+    ["set", "smaller_ten_func", ["func", ["n"], ["kleiner", "n", 10]]],
+
+   
+    ["set", "A", ["array", 5]],
+    ["set_element", ["get", "A"], 0, 1],
+    ["set_element", ["get", "A"], 1, 2],
+    ["set_element", ["get", "A"], 2, 3],
+    ["set_element", ["get", "A"], 3, 12], 
+    ["set_element", ["get", "A"], 4, 4],
+
+    ["print", ["map", ["get", "A"], "sq_func"]],
+    ["print", ["map", ["get", "A"], "times_ten_func"]],
+
+
+    ["print", ["reduce", ["get", "A"], "add_func"]],
+    ["print", ["reduce", ["get", "A"], "prod_func"]],
+
+
+    ["print", ["filter", ["get", "A"], "larger_ten_func"]],
+    ["print", ["filter", ["get", "A"], "greater_two_func"]],
+    ["print", ["filter", ["get", "A"], "smaller_ten_func"]]
+
+]
+
